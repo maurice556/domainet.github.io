@@ -1,0 +1,168 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#calc{
+    width: 30%;
+    height: 38%;
+    background-image: linear-gradient(to left,blue,red);
+    padding-top: 3px;
+    position: fixed;
+    top: 3%;
+    left: 70%;
+    transition:3s;
+    display: none;
+}
+
+.display{
+    width: 95%;
+    height: 60px;
+    background-color:azure;
+    margin-left: 2.5%;
+    
+}
+#first{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+
+    
+}
+
+#second{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+
+    
+}
+#disc{
+    color:black;
+    font-size: 20px;
+}
+
+#third{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+
+    
+}
+input:hover{
+    background-image: linear-gradient(to left,red,blue);
+    cursor: pointer;
+    font-size: 18px;
+    width: 72px;
+    
+}
+input{
+    width: 70px;
+    background-color:black;
+    color: white;
+    margin-top: 1%;
+    
+}
+#ve{
+    font-size: 20;
+}
+#ve:hover{
+    font-size: 25px;
+}
+.d{
+    width: 95%;
+    background-color:lightblue;
+    color: black;
+    height: 55px;
+    margin-left: 2.5%;
+    
+}
+.d:hover{
+    width: 95%;
+    background-color: azure;
+    cursor:text;
+}
+::placeholder{
+    color: rgba(0, 0, 255, 0.434);
+}
+button.value{
+    color: blue;
+    
+}
+button:hover{
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18;
+}
+body{
+    height: 150vh;
+}
+</style>
+<body>
+    <div id="calc">
+    
+        <input class="d" type="text" name="" id="disc" placeholder="0">
+        
+        <div id="first">
+            <input type="button" value="7" onclick="disc.value+='7'">
+            <input type="button" value="8" onclick="disc.value+='8'">
+            <input type="button" value="9" onclick="disc.value+='9'">
+            <input type="button" id="re" value="AC"onclick="disc.value=''">
+        </div>
+        <div id="second">
+            <input type="button" value="4"onclick="disc.value+='4'">
+            <input type="button" value="5"onclick="disc.value+='5'">
+            <input type="button" value="6"onclick="disc.value+='6'">
+            <input id="ve" type="button" value="&divide;"onclick="disc.value+='/'">
+        </div>
+        <div id="third">
+            <input type="button" value="3"onclick="disc.value+='3'">
+            <input type="button" value="2"onclick="disc.value+='2'">
+            <input type="button" value="1"onclick="disc.value+='1'">
+            <input id="ve" type="button" value="-"onclick="disc.value+='-'">
+        </div>
+        <div id="third">
+            <input id="ve" type="button" value="."onclick="disc.value+='.'">
+            <input type="button" value="0"onclick="disc.value+='0'">
+            <input type="button" value="00"onclick="disc.value+='00'">
+            <input id="ve" type="button" value="*"onclick="disc.value+='*'">
+        </div>
+        <div id="third" class="ds">
+            <input type="button" value="DEL" onclick="disc.value=disc.value.slice(0,-1)">
+            <input id="ve" type="button" class="sa" value="+"onclick="disc.value+='+'">
+            <input type="button" id="re" value="000"onclick="disc.value+='000'">
+            <input id="ve" type="button" value="=" onclick="disc.value=eval(disc.value)">
+        </div>
+    </div>
+
+    <button id="bs" onclick="wax();">calculator</button>
+    <button id="close" onclick="wax1();">Close</button>
+
+    <script>
+        document.getElementById("close").style.display="none"
+        function wax(){
+            document.getElementById("calc").style.display="block";
+            document.getElementById("bs").style.display="none";
+            document.getElementById("close").style.display="block";
+
+            
+        }
+       
+
+        function wax1(){
+            document.getElementById("calc").style.display="none";
+            
+        }
+         
+       
+        
+    </script>
+</body>
+</html>
